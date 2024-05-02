@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+
+.App {
+  text-align: center;
+  background-color: black;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+ 
+.std1 input{
+  font-family: "Mukta", sans-serif;
+  text-transform: lowercase;
+}
+.std1{
+  font-family: "Mukta", sans-serif;
+  text-transform: lowercase;
+}
+
+*{
+  font-family: "Bebas Neue", sans-serif;
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.inp1{
+  min-height: 550px;
+  
+  padding: 60px 0;
+}
+
+.inp1 h2{
+  font-size: 60px;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+.inp2{
+  min-height: 300px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  background-color: #ff9843ad !important;
+  color: white !important;
+  transition: 1s all !important;
+
+}
+
+.backk{
+  background-color: black;
+  padding-bottom: 100px;
+  padding-top: 50px;
+}
+
+a{
+  color: #ff9843ad !important;
+}
+
+input::placeholder{
+  padding-left: 10px;
+  color: #282c34;
+}
+
+.tableup{
+  background-color: black;
+  color: white;
+  height:40px;
+  padding-top: 40px;
+
+
+}
+
+.tableup h1{
+  font-size: 60px;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+
+}
+
+
+
+.table>:not(caption)>*>*{
+  background-color: black !important;
+  color: white !important;
+  font-family: "Mukta", sans-serif;
+
+}
+.inp2 form{
+  border: 1px dashed white;
+  padding: 20px 80px;
+  width: 100%;
+
+}
+.inp2 input{
+  border: 1px solid;
+  width: 90%;
+  height: 40px;
+  margin-bottom: 10px;
+  color: #282c34 !important;
+
+}
+.model1{
+  display: flex;
+  justify-content: end;
+}
+.model1 Button{
+  font-size: 14px;
+  width: 65px;
+}
+
+.bord{
+  border-top: 1px solid rgba(255, 255, 255, 0.384);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.384);
+  padding-bottom: 30px;
+}
+
+.navv{
+  background-color: black;
+  color: white !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.486);
+  border-radius: 0px 0px 25px 25px;
+}
+
+.back{
+  background-color: black;
+}
+
+.nav-link{
+  color: white !important;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+  font-weight: 400;
+}
+
+.color{
+  background-color: black;
+  color: white;
+}
+
+ .trans{
+  border: 1px dashed white;
+} 
+
+.text-c{
+  color: white;
+}
+.but{
+  padding: 15px 45px;
+  border: 1px solid #ff9843ad;
+  font-size: 20px;
+  transition: 1s all;
+}
+
+.in{
+  color:#282c34 !important
+
+}
+
+.but:hover{
+  background-color: #ff9843ad;
+  color: black;
+  transition: 1s all;
+}
+.butt{
+  background-color: #ff9843ad !important;
+  border: 1px solid black !important;
+  padding: 10px 15px !important;
+  font-weight: 100 !important;
+  border-radius: 10px;
+  color: black;
+}
+
+.butt:hover{
+  background-color: transparent !important;
+  border: 1px solid #ffb06fad !important;
+  color: white;
+}
+
+.down{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.486);
+  margin-bottom: 40px;
+
+}
+
+th{
+  height: 50px;
+}
+
+.upper{
+  font-size: 60px;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+
+.right{
+  text-align: right;
+}
+
+.deta{
+  color: #ff9843ad;
+
+}
+/* .std1{
+  margin: 80px 0 0 0;
+  padding-right: 20px;
+}  */
