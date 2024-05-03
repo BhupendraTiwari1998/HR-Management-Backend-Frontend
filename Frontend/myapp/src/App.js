@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Appbar from './components/Appbar';
 import StudentList from './components/students/StudentList';
 import AddStudent from './components/students/AddStudent';
 import SingleStudent from './components/students/SingleStudent';
@@ -21,7 +20,6 @@ function App() {
     <div className="App">
       <Router>
         {/* <SearchProvider> */}
-          <Appbar />
           <Routes>
             <Route path='/' element={<ProtectedLayout />}>
 
@@ -30,7 +28,7 @@ function App() {
               <Route path='/add_student' element={<AddStudent />} />
               <Route path='/edit_std/:student_edit' element={<EditStudent />} />
 
-              <Route path='/add-company/:student_id' element={<AddCompany />} />
+              <Route path='/add-company/:student_id1' element={<AddCompany />} />
               <Route path='/edit-company/:edit_id' element={<EditCompany />} />
 
               <Route path='/course' element={<Course />} />

@@ -71,7 +71,7 @@ const SignUp = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.name}
-                className="form-control border-2 border-sky-600"
+                className="form-control border-2 border-sky-600 std1"
                 placeholder="Name"
               />
               {errors.name && touched.name && errors.name}

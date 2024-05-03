@@ -13,7 +13,7 @@ const AddCourse = () => {
     <div>
       <div className='inp1 back'>
 
-        <h2>Add New Student</h2><br />
+        <h2>Add New Course</h2><br />
 
         <div className='inp2 w-[600px] border border-black mx-auto '>
 
@@ -30,6 +30,9 @@ const AddCourse = () => {
               return errors;
             }}
             onSubmit={(values, { setSubmitting }) => {
+
+              values.course_name = values.course_name.toLowerCase();
+              values.course_description = values.course_description.toLowerCase();
 
               axios.post('http://localhost:3003/add-category', values)
                 .then((res) => {
@@ -61,7 +64,7 @@ const AddCourse = () => {
                   onBlur={handleBlur}
                   value={values.course_name}
                   placeholder='course_name *'
-                  className='border border w-[90%] h-[35px]'
+                  className='border border w-[90%] h-[35px] std1'
                 />
                 {errors.course_name && touched.course_name && errors.course_name} <br />
                 <input
@@ -71,7 +74,7 @@ const AddCourse = () => {
                   onBlur={handleBlur}
                   value={values.course_description}
                   placeholder='course_description *'
-                  className='border border w-[90%] h-[35px]'
+                  className='border border w-[90%] h-[35px] std1'
                 />
                 {errors.course_description && touched.course_description && errors.course_description} <br />
 

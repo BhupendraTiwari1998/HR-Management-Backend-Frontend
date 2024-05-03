@@ -95,7 +95,7 @@ const EditStudent = () => {
                                     onBlur={handleBlur}
                                     value={values.name}
                                     // placeholder=' name *'
-                                    className='border border w-[90%] h-[35px]'
+                                    className='border border w-[90%] h-[35px] std1'
                                 />
                                 {errors.name && touched.name && errors.name} <br />
                                 <input
@@ -105,7 +105,7 @@ const EditStudent = () => {
                                     onBlur={handleBlur}
                                     value={values.email}
                                     // placeholder='description'
-                                    className='border border w-[90%] h-[35px]'
+                                    className='border border w-[90%] h-[35px] v'
                                 />
                                 {errors.email && touched.email && errors.email} <br />
 
@@ -116,7 +116,7 @@ const EditStudent = () => {
                                     onBlur={handleBlur}
                                     value={values.contact}
                                     // placeholder=' name *'
-                                    className='border border w-[90%] h-[35px]'
+                                    className='border border w-[90%] h-[35px] std1'
                                 />
                                 {errors.contact && touched.contact && errors.contact} <br />
                                 <select
@@ -124,7 +124,7 @@ const EditStudent = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.course_category}
-                                    className='border border w-[90%] h-[35px]'
+                                    className='border border w-[90%] h-[35px] std1'
                                 >
                                     <option value="">Select Course</option>
                                     {

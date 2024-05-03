@@ -7,12 +7,12 @@ import { useNavigate, useParams } from 'react-router-dom'
 const AddCompany = () => {
 
     const navigate = useNavigate()
-    const { student_id } = useParams()
+    const { student_id1 } = useParams()
 
     const [singlestudent, setSinglestudent] = useState({});
 
     useEffect(() => {
-        axios.get(`http://localhost:3003/get-student/${student_id}`)
+        axios.get(`http://localhost:3003/get-student/${student_id1}`)
             .then((res) => {
                 // console.log("aaaaaaa", res.data)
                 setSinglestudent(res.data.data)
@@ -20,7 +20,7 @@ const AddCompany = () => {
             .catch((err) => {
                 console.log(err)
             })
-    }, [student_id])
+    }, [student_id1])
 
     return (
         <div>
@@ -36,7 +36,7 @@ const AddCompany = () => {
                 <div className='inp2 w-[600px] border border-black mx-auto '>
 
                     <Formik
-                        initialValues={{ company_name: '', company_description: '', company_status: '', date: '', student_detail: student_id }}
+                        initialValues={{ company_name: '', company_description: '', company_status: '', date: '', student_detail: student_id1 }}
                         validate={values => {
                             const errors = {};
                             if (!values.company_name) {
@@ -85,7 +85,7 @@ const AddCompany = () => {
                                     onBlur={handleBlur}
                                     value={values.company_name}
                                     placeholder='company name *'
-                                    className='border border w-[90%] h-[35px]'
+                                    className='border border w-[90%] h-[35px] std1'
                                 />
                                 {errors.company_name && touched.company_name && errors.company_name} <br />
                                 <input
@@ -95,7 +95,7 @@ const AddCompany = () => {
                                     onBlur={handleBlur}
                                     value={values.company_description}
                                     placeholder='description'
-                                    className='border border w-[90%] h-[35px]'
+                                    className='border border w-[90%] h-[35px] std1'
                                 />
                                 {errors.company_description && touched.company_description && errors.company_description} <br />
 
@@ -106,7 +106,7 @@ const AddCompany = () => {
                                     onBlur={handleBlur}
                                     value={values.company_status}
                                     placeholder='company_status *'
-                                    className='border border w-[90%] h-[35px]'
+                                    className='border border w-[90%] h-[35px] std1'
                                 />
                                 {errors.company_status && touched.company_status && errors.company_status} <br />
                                 <input
@@ -116,7 +116,7 @@ const AddCompany = () => {
                                     onBlur={handleBlur}
                                     value={values.date}
                                     placeholder='description'
-                                    className='border border w-[90%] h-[35px]'
+                                    className='border border w-[90%] h-[35px] std1'
                                 />
                                 {errors.date && touched.date && errors.date} <br />
 

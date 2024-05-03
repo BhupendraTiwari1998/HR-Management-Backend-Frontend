@@ -76,7 +76,7 @@ const EditCourse = () => {
                   onBlur={handleBlur}
                   value={values.course_name}
                   // placeholder=' name *'
-                  className='border border w-[90%] h-[35px]'
+                  className='border border w-[90%] h-[35px] std1'
                 />
                 {errors.course_name && touched.course_name && errors.course_name} <br />
                 <input
@@ -86,7 +86,7 @@ const EditCourse = () => {
                   onBlur={handleBlur}
                   value={values.course_description}
                   // placeholder='description'
-                  className='border border w-[90%] h-[35px]'
+                  className='border border w-[90%] h-[35px] std1'
                 />
                 {errors.course_description && touched.course_description && errors.course_description} <br />
 

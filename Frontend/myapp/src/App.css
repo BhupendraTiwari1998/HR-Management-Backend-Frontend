@@ -14,11 +14,11 @@
  
 .std1 input{
   font-family: "Mukta", sans-serif;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 .std1{
   font-family: "Mukta", sans-serif;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 
 *{
@@ -236,4 +236,11 @@ th{
 /* .std1{
   margin: 80px 0 0 0;
   padding-right: 20px;
-}  */
+}  
+*/
+
+.submit_btn{
+  background-color: #ad672d !important;
+  color: white;
+  border: 1px solid #ad672d !important;
+}

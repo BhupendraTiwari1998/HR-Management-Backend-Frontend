@@ -96,7 +96,7 @@ const Course = () => {
                                 return (
                                     <tr>
                                         <td>{++ind}</td>
-                                        <td>{elem.course_name}</td>
+                                        <td style={{textTransform:'capitalize'}}>{elem.course_name}</td>
                                         <td className='text-left w-[800px]'>{elem.course_description ? truncate(elem.course_description, 100) : ''}</td>
                                         <td>
                                             <Button onClick={() => edithand(elem._id)} className='mx-3'><CiEdit /></Button>

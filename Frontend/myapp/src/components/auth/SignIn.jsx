@@ -9,15 +9,18 @@ import { notification } from "antd"
 
 const SignIn = () => {
   const navigate = useNavigate()
+
+  //bhupendra123@gmail.com login email
+  //bhupendra123 password
   
   return (
-    <div className="h-[613px] flex justify-center items-center bg-slate-200">
+    <div className="h-screen flex justify-center items-center inp1 back">
       <div className="w-[600px] p-4">
-        {/* <div className="login_icon">
-          <SiGnuprivacyguard className="text-3xl" />
-        </div> */}
+        <div className="login_icon flex justify-center text-white ">
+          <SiGnuprivacyguard className="text-5xl" />
+        </div>
         
-        <h2 className="my-3">SIGN IN</h2>
+        <h2 className="my-3 text-white">SIGN IN</h2>
         <Formik
           initialValues={{
             email: "",
@@ -95,11 +98,11 @@ const SignIn = () => {
               >
                 Submit
               </Button>
-              <div className="mt-3">
+              {/* <div className="mt-3">
                 <Link to="/sign-up" className="no-underline">
                   Don't have an account? Sign Up</Link>
 
-              </div>
+              </div> */}
 
             </form>
           )}
