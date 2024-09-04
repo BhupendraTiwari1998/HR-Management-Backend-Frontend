@@ -16,8 +16,9 @@ app.use(cors());
 
 const port = 3003;
 
-mongoose.connect('mongodb://localhost:27017/HR_Management')
-// mongoose.connect('mongodb+srv://Bhupendra:tiwari1234@hrm.lgovapr.mongodb.net/HR_Management')
+// mongoose.connect('mongodb://localhost:27017/HR_Management')
+
+mongoose.connect('mongodb+srv://Bhupendra:tiwari1234@hrm.lgovapr.mongodb.net/HR_Management')
     .then(() => console.log('Connected!'));
 
 
