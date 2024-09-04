@@ -29,6 +29,7 @@ const Appbar = () => {
                             <NavLink className="nav-link mx-3" to='/' >Student List</NavLink>
                             <NavLink className="nav-link mx-3" to='/add_student' >Add Student</NavLink>
                             <NavLink className="nav-link mx-3" to='/course' >Course</NavLink>
+                            {/* <NavLink className="nav-link mx-3" to='/order' >New</NavLink> */}
                         </Nav>
 
                         <button className='nav-butt text-white rounded px-6 py-2 ms-4' onClick={onlogoutHandle}>Logout</button>

@@ -21,13 +21,17 @@ const EditCourse = () => {
       console.log(err)
     })
   },[course_id])
+
+  const clickBack = () => {
+    navigate('/course')
+  }
   return (
     <div>
       <div className='inp1 back'>
 
         <h2>Edit Course</h2><br />
 
-        <div className='inp2 w-[600px] border border-black mx-auto'>
+        <div className='inp2 md:w-[600px] mx-auto'>
 
           <Formik
             initialValues={{ course_name: editCourse.course_name || " ", course_description: editCourse.course_description || '' }}
@@ -97,6 +101,8 @@ const EditCourse = () => {
             )}
           </Formik>
         </div>
+
+        <button className='but' onClick={clickBack}>Back</button>
       </div>
     </div>
   )

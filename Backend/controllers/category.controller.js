@@ -53,7 +53,7 @@ export const addCategory = async(req, res) => {
                 message: "Course already Exist"
             })
         } else {
-            const addCat = CategoryModel({
+            const addCat = new CategoryModel({
                 course_name: course_name,
                 course_description: course_description
             })
@@ -70,8 +70,6 @@ export const addCategory = async(req, res) => {
                 message: "Bad Request"
             })
         }
-
-
 
     } catch (error) {
         return res.status(500).json({
@@ -141,10 +139,11 @@ export const deleteCategory = async (req, res) => {
 
         const categoryID = req.params.category_id;
         const cateDel = await CategoryModel.deleteOne({ _id: categoryID })
-
-        if (cateDel) {
+        console.log("course",cateDel)
+        if (cateDel.acknowledged) {
             return res.status(200).json({
-                message: "deleted"
+                message: "deleted",
+                data:cateDel
             })
         }
         return res.status(400).json({

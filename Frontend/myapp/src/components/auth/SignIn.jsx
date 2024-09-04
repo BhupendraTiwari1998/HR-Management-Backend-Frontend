@@ -10,8 +10,8 @@ import { notification } from "antd"
 const SignIn = () => {
   const navigate = useNavigate()
 
-  //bhupendra123@gmail.com login email
-  //bhupendra123 password
+  //bhupendra123@gmail.com    login email
+  //bhupendra123     password
   
   return (
     <div className="h-screen flex justify-center items-center inp1 back">
@@ -57,6 +57,7 @@ const SignIn = () => {
               .catch((err) => {
                 console.log(err)
                 navigate("/sign-in")
+                notification.error({ message: err.response.data.message })
               })
           }}
         >
@@ -98,11 +99,11 @@ const SignIn = () => {
               >
                 Submit
               </Button>
-              {/* <div className="mt-3">
+              <div className="mt-3">
                 <Link to="/sign-up" className="no-underline">
                   Don't have an account? Sign Up</Link>
 
-              </div> */}
+              </div>
 
             </form>
           )}

@@ -9,7 +9,7 @@ const EditStudent = () => {
     const [EditStudent, seteditStudent] = useState({})
     const [stdCategory, setStdCategory] = useState([])
     const { student_edit } = useParams()
-    console.log("bhssjk", student_edit)
+    // console.log("bhssjk", student_edit)
 
     const navigate = useNavigate()
 
@@ -33,6 +33,10 @@ const EditStudent = () => {
             })
     }, [student_edit])
 
+    const clickBack = () => {
+        navigate('/')
+    }
+
 
     return (
         <div>
@@ -40,10 +44,10 @@ const EditStudent = () => {
 
                 <h2>Edit Student</h2><br />
 
-                <div className='inp2 w-[600px] border border-black mx-auto'>
+                <div className='inp2 md:w-[600px] mx-auto'>
 
                     <Formik
-                        initialValues={{ name: EditStudent.name || " ", email: EditStudent.email || '', contact: EditStudent.contact || " ", course_category: stdCategory || '' }}
+                        initialValues={{ name: EditStudent.name || " ", email: EditStudent.email || '', contact: EditStudent.contact || " ", course_category: EditStudent.course_category?._id || '' }}
                         enableReinitialize={true}
                         validate={values => {
                             const errors = {};
@@ -85,7 +89,6 @@ const EditStudent = () => {
                             handleBlur,
                             handleSubmit,
                             isSubmitting,
-                            /* and other goodies */
                         }) => (
                             <form onSubmit={handleSubmit}><br />
                                 <input
@@ -94,7 +97,6 @@ const EditStudent = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.name}
-                                    // placeholder=' name *'
                                     className='border border w-[90%] h-[35px] std1'
                                 />
                                 {errors.name && touched.name && errors.name} <br />
@@ -104,8 +106,7 @@ const EditStudent = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.email}
-                                    // placeholder='description'
-                                    className='border border w-[90%] h-[35px] v'
+                                    className='border border w-[90%] h-[35px] std1'
                                 />
                                 {errors.email && touched.email && errors.email} <br />
 
@@ -115,7 +116,6 @@ const EditStudent = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.contact}
-                                    // placeholder=' name *'
                                     className='border border w-[90%] h-[35px] std1'
                                 />
                                 {errors.contact && touched.contact && errors.contact} <br />
@@ -123,17 +123,14 @@ const EditStudent = () => {
                                     name="course_category"
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    value={values.course_category}
+                                    value={values?.course_category}
                                     className='border border w-[90%] h-[35px] std1'
                                 >
-                                    <option value="">Select Course</option>
                                     {
                                         stdCategory &&
-                                        stdCategory.map((elem, ind) => {
-                                            return (
-                                                <option key={elem._id} value={elem._id}>{elem.course_name}</option>
-                                            )
-                                        })
+                                        stdCategory.map((elem, ind) => (
+                                                <option key={ind} value={elem._id} selected={elem._id === EditStudent?.stdCategory?._id ? true : false}>{elem.course_name}</option>
+                                        ))
                                     }
                                 </select>
                                 {errors.course_category && touched.course_category && errors.course_category} <br /><br />
@@ -147,6 +144,8 @@ const EditStudent = () => {
                         )}
                     </Formik>
                 </div>
+
+                <button className='but mt-10' onClick={clickBack}>Back</button>
             </div>
         </div>
     )

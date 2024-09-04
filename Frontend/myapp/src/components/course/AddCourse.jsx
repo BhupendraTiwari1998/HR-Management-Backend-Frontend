@@ -1,5 +1,4 @@
 import { notification } from 'antd';
-import { resetWarned } from 'antd/es/_util/warning';
 import axios from 'axios';
 import { Formik } from 'formik';
 import React from 'react'
@@ -9,13 +8,17 @@ import { useNavigate } from 'react-router-dom';
 const AddCourse = () => {
 
   const navigate = useNavigate()
+
+  const clickBack = () => {
+    navigate('/course')
+  }
   return (
     <div>
       <div className='inp1 back'>
 
         <h2>Add New Course</h2><br />
 
-        <div className='inp2 w-[600px] border border-black mx-auto '>
+        <div className='inp2 md:w-[600px] mx-auto '>
 
           <Formik
             initialValues={{ course_name: '', course_description: '' }}
@@ -39,7 +42,7 @@ const AddCourse = () => {
                   console.log(res.data)
                   notification.success({ message: res.data.message })
                   setSubmitting(false)
-                  navigate('/course')
+                  navigate('/course') 
                 })
                 .catch((err) => {
                   console.log(err)
@@ -85,6 +88,8 @@ const AddCourse = () => {
             )}
           </Formik>
         </div>
+
+        <button className='but' onClick={clickBack}>Back</button>
       </div>
 
     </div>

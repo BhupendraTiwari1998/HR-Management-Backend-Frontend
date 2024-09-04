@@ -4,7 +4,6 @@ import StudentList from './components/students/StudentList';
 import AddStudent from './components/students/AddStudent';
 import SingleStudent from './components/students/SingleStudent';
 import AddCompany from './components/students/AddCompany';
-// import SearchProvider from './context/SearchProvider';
 import EditCompany from './components/students/EditCompany';
 import Course from './components/course/Course';
 import AddCourse from './components/course/AddCourse';
@@ -13,36 +12,38 @@ import EditStudent from './components/students/EditStudent';
 import ProtectedLayout from './components/ProtectedLayout';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
+// import NewOrder from './components/course/NewOrder';
 
+// https://bpa.st/RTHQ
 
 function App() {
   return (
     <div className="App">
       <Router>
-        {/* <SearchProvider> */}
-          <Routes>
-            <Route path='/' element={<ProtectedLayout />}>
+        <Routes>
+          <Route path='/' element={<ProtectedLayout />}>
 
-              <Route path='/' element={<StudentList />} />
-              <Route path='/single_student/:student_id' element={<SingleStudent />} />
-              <Route path='/add_student' element={<AddStudent />} />
-              <Route path='/edit_std/:student_edit' element={<EditStudent />} />
+            <Route path='/' element={<StudentList />} />
+            <Route path='/single_student/:student_id' element={<SingleStudent />} />
+            <Route path='/add_student' element={<AddStudent />} />
+            <Route path='/edit_std/:student_edit' element={<EditStudent />} />
 
-              <Route path='/add-company/:student_id1' element={<AddCompany />} />
-              <Route path='/edit-company/:edit_id' element={<EditCompany />} />
+            <Route path='/add-company/:student_id1' element={<AddCompany />} />
+            <Route path='/edit-company/:edit_id' element={<EditCompany />} />
 
-              <Route path='/course' element={<Course />} />
-              <Route path='/add-course' element={<AddCourse />} />
-              <Route path='/edit-course/:course_id' element={<EditCourse />} />
+            <Route path='/course' element={<Course />} />
+            <Route path='/add-course' element={<AddCourse />} />
+            <Route path='/edit-course/:course_id' element={<EditCourse />} />
 
-            </Route>
+            {/* <Route path='/order' element={<NewOrder/>}/> */}
 
-            <Route path='/sign-in' element={<SignIn />} />
-            <Route path='/sign-up' element={<SignUp />} />
+          </Route>
 
-          </Routes>
+          <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/sign-up' element={<SignUp />} />
 
-        {/* </SearchProvider> */}
+        </Routes>
+
 
       </Router>
 

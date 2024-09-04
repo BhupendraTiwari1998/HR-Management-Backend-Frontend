@@ -129,8 +129,6 @@ export const deleteAdmin = async (req, res) => {
     }
 }
 
-
-
 // auth
 
 export const signUp = async (req, res) => {
@@ -138,13 +136,13 @@ export const signUp = async (req, res) => {
         const { name, email, password } = req.body;
         const existAdmin = await adminModel.findOne({ email: email });
         if (existAdmin) {
-            return res.status(200).json({
+            return res.status(400).json({
                 message: "Admin already exist"
             })
         }
 
         const hashedPassword = bcrypt.hashSync(password, 10);
-        console.log(password, hashedPassword)
+        // console.log(password, hashedPassword)
 
         const saveAdmin = await adminModel.create({
             name: name,
@@ -164,7 +162,6 @@ export const signUp = async (req, res) => {
         return res.status(500).json({
             message: error.message
         })
-
     }
 }
 
@@ -173,14 +170,14 @@ export const signIn = async (req, res) => {
         const { email, password } = req.body;
         const existAdmin = await adminModel.findOne({ email: email });
         if (!existAdmin) {
-            return res.status(200).json({
+            return res.status(400).json({
                 message: "User doesn't exist"
             })
         }
 
         const checkPassword = bcrypt.compareSync(password, existAdmin.password);
         if (!checkPassword) {
-            return res.status(200).json({
+            return res.status(400).json({
                 message: "Invalid Credential"
             })
         }
@@ -195,7 +192,7 @@ export const signIn = async (req, res) => {
             { expiresIn: "10h" }
         )
 
-        console.log("tokennnnn", token);
+        // console.log("tokennnnn", token);
         return res.status(200).json({
             data: existAdmin,
             token: token,

@@ -21,16 +21,20 @@ const AddStudent = () => {
                 console.log(err)
             })
     }, [])
+
+    const clickBack = () => {
+        navigate('/')
+    }
     return (
         <div>
-            <div className='inp1 back'>
+            <div className='inp1 back container mx-auto px-4 py-6'>
 
                 <h2>Add New Student</h2><br />
 
-                <div className='inp2 w-[600px] border border-black mx-auto '>
+                <div className='w-full inp2 max-w-3xl mx-auto '>
 
                     <Formik
-                        initialValues={{ name: '', email: '', contact:'', course_category: '' }}
+                        initialValues={{ name: '', email: '', contact: '', course_category: '' }}
                         validate={values => {
                             const errors = {};
                             if (!values.name) {
@@ -52,7 +56,7 @@ const AddStudent = () => {
                             axios.post('http://localhost:3003/add-student', values)
                                 .then((res) => {
                                     // console.log(res.data)
-                                    notification.success({message:"Added successfully"})
+                                    notification.success({ message: "Added successfully" })
                                     setSubmitting(false)
                                     navigate('/')
                                 })
@@ -132,6 +136,8 @@ const AddStudent = () => {
 
 
                 </div>
+
+                <button className='but mt-10' onClick={clickBack}>Back</button>
             </div>
         </div>
     )

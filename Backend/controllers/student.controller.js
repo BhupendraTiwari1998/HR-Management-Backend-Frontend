@@ -4,18 +4,18 @@ export const getStudents = async (req, res) => {
     try {
         const { search, limit, page } = req.query;
         const skipno = limit * (page - 1)
-        const pipeline = [
-            {
-                $lookup: {
-                    from: "categories",
-                    localField: "course_category",
-                    foreignField: "_id",
-                    as: "course_category"
-                },
-            },
-            { $unwind: "$course_category" },
-            { $sort: { '_id': -1 } },
-        ]
+        // const pipeline = [
+        //     {
+        //         $lookup: {
+        //             from: "categories",
+        //             localField: "course_category",
+        //             foreignField: "_id",
+        //             as: "course_category"
+        //         },
+        //     },
+        //     { $unwind: "$course_category" },
+        //     { $sort: { '_id': -1 } },
+        // ]
 
         const generateSearchRgx = (pattern) => new RegExp(`.*${pattern}.*`);
         const searchRgx = generateSearchRgx(search);
@@ -29,13 +29,14 @@ export const getStudents = async (req, res) => {
                     { "course_category.course_name" : { $regex: searchRgx, $options: "i" } }
                 ]
             }
-            pipeline.push({ $match: filter })
+            // pipeline.push({ $match: filter })
         }
         if (parseInt(limit) && parseInt(page)) {
             pipeline.push({ $skip: skipno }, { $limit: parseInt(limit)})
         }
 
-        const students = await studentModel.aggregate(pipeline);
+        // const students = await studentModel.aggregate(pipeline);
+        const students = await studentModel.find(filter).populate("course_category");
         if (students) {
             return res.status(200).json({
                 data: students,
@@ -143,8 +144,8 @@ export const deleteStudent = async (req, res) => {
     try {
         const studentID = req.params.student_id;
         const student = await studentModel.deleteOne({ _id: studentID });
-
-        if (student) {
+        console.log("student",student)
+        if (student.acknowledged) {
             return res.status(200).json({
                 message: "deleted"
             })
