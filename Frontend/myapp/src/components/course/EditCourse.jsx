@@ -13,7 +13,7 @@ const EditCourse = () => {
   const navigate = useNavigate()
 
   useEffect(()=>{
-    axios.get(`https://hr-management-backend-frontend.onrender.com//get-category/${course_id}`)
+    axios.get(`https://hr-management-backend-frontend.onrender.com/get-category/${course_id}`)
     .then((res)=>{
       setEditCourse(res.data.data)
     })
@@ -49,7 +49,7 @@ const EditCourse = () => {
             }}
             onSubmit={(values, { setSubmitting }) => {
 
-              axios.put(`https://hr-management-backend-frontend.onrender.com//update-category/${course_id}`, values)
+              axios.put(`https://hr-management-backend-frontend.onrender.com/update-category/${course_id}`, values)
                 .then((res) => {
                   console.log(res.data)
                   notification.success({ message: "Updated successfully" })

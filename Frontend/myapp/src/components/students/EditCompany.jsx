@@ -12,7 +12,7 @@ const EditCompany = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    axios.get(`https://hr-management-backend-frontend.onrender.com//get-company/${edit_id}`)
+    axios.get(`https://hr-management-backend-frontend.onrender.com/get-company/${edit_id}`)
       .then((res) => {
         setEditComp(res.data.data)
       })
@@ -52,7 +52,7 @@ const EditCompany = () => {
             return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
-            axios.put(`https://hr-management-backend-frontend.onrender.com//update-company/${edit_id}`, values)
+            axios.put(`https://hr-management-backend-frontend.onrender.com/update-company/${edit_id}`, values)
               .then((res) => {
                 notification.success({ message: "Updated successfully" })
                 setSubmitting(false)

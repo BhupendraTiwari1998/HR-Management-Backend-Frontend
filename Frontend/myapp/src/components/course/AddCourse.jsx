@@ -37,7 +37,7 @@ const AddCourse = () => {
               values.course_name = values.course_name.toLowerCase();
               values.course_description = values.course_description.toLowerCase();
 
-              axios.post('https://hr-management-backend-frontend.onrender.com//add-category', values)
+              axios.post('https://hr-management-backend-frontend.onrender.com/add-category', values)
                 .then((res) => {
                   console.log(res.data)
                   notification.success({ message: res.data.message })

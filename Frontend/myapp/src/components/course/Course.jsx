@@ -15,7 +15,7 @@ const Course = () => {
     const navigate = useNavigate()
 
     const getdata = (val = '') => {
-        axios.get('https://hr-management-backend-frontend.onrender.com//get-categories?search=' + val)
+        axios.get('https://hr-management-backend-frontend.onrender.com/get-categories?search=' + val)
             .then((res) => {
                 setCourse(res.data.data)
             })
@@ -37,7 +37,7 @@ const Course = () => {
     }
 
     const deletehand = () => {
-        axios.delete(`https://hr-management-backend-frontend.onrender.com//delete-category/${delete2}`)
+        axios.delete(`https://hr-management-backend-frontend.onrender.com/delete-category/${delete2}`)
             .then((res) => {
                 notification.success({ message: "Deleted successfully" })
             })

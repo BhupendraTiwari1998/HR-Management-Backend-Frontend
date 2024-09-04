@@ -41,7 +41,7 @@ const SignIn = () => {
             return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
-            axios.post(`https://hr-management-backend-frontend.onrender.com//sign-in`, values)
+            axios.post(`https://hr-management-backend-frontend.onrender.com/sign-in`, values)
               .then((res) => {
                 console.log("dfghjktyu", res.data)
                 setSubmitting(false)

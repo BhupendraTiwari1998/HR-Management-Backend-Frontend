@@ -12,7 +12,7 @@ const AddStudent = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get('https://hr-management-backend-frontend.onrender.com//get-categories')
+        axios.get('https://hr-management-backend-frontend.onrender.com/get-categories')
             .then((res) => {
                 // console.log(res)
                 setCategory1(res.data.data)
@@ -53,7 +53,7 @@ const AddStudent = () => {
                         }}
                         onSubmit={(values, { setSubmitting }) => {
 
-                            axios.post('https://hr-management-backend-frontend.onrender.com//add-student', values)
+                            axios.post('https://hr-management-backend-frontend.onrender.com/add-student', values)
                                 .then((res) => {
                                     // console.log(res.data)
                                     notification.success({ message: "Added successfully" })

@@ -14,7 +14,7 @@ const StudentList = () => {
     const [confDelete, setConfDelete] = useState(false);
 
     const getdata = (val = '') => {
-        axios.get('https://hr-management-backend-frontend.onrender.com//get-students?search=' + val)
+        axios.get('https://hr-management-backend-frontend.onrender.com/get-students?search=' + val)
             .then((res) => {
                 setStudent(res.data.data);
             })
@@ -32,7 +32,7 @@ const StudentList = () => {
     }, [confDelete]);
 
     const deletehand = () => {
-        axios.delete(`https://hr-management-backend-frontend.onrender.com//delete-student/${delete1}`)
+        axios.delete(`https://hr-management-backend-frontend.onrender.com/delete-student/${delete1}`)
             .then((res) => {
                 notification.success({ message: "Deleted Successfully" });
             })
