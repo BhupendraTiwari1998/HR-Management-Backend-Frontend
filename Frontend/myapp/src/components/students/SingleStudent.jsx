@@ -16,7 +16,7 @@ const SingleStudent = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3003/get-student/${student_id}`)
+    axios.get(`https://hr-management-backend-frontend.onrender.com//get-student/${student_id}`)
       .then((res) => {
         setSinglestudent(res.data.data);
       })
@@ -35,7 +35,7 @@ const SingleStudent = () => {
   const [delete3, setDelete3] = useState("");
 
   const getdata = (val = '') => {
-    axios.get(`http://localhost:3003/get-companies?studentid=${student_id}&search=${val}`)
+    axios.get(`https://hr-management-backend-frontend.onrender.com//get-companies?studentid=${student_id}&search=${val}`)
       .then((res) => {
         setCompany(res.data.data);
       })
@@ -57,7 +57,7 @@ const SingleStudent = () => {
   };
 
   const deletehand = () => {
-    axios.delete(`http://localhost:3003/delete-company/${delete3}`)
+    axios.delete(`https://hr-management-backend-frontend.onrender.com//delete-company/${delete3}`)
       .then((res) => {
         notification.success({ message: "Deleted successfully" });
       })

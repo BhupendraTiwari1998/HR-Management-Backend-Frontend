@@ -10,7 +10,7 @@ const AddCompany = () => {
     const [singlestudent, setSinglestudent] = useState({});
 
     useEffect(() => {
-        axios.get(`http://localhost:3003/get-student/${student_id1}`)
+        axios.get(`https://hr-management-backend-frontend.onrender.com//get-student/${student_id1}`)
             .then((res) => {
                 setSinglestudent(res.data.data);
             })
@@ -50,7 +50,7 @@ const AddCompany = () => {
                             return errors;
                         }}
                         onSubmit={(values, { setSubmitting }) => {
-                            axios.post(`http://localhost:3003/add-company`, values)
+                            axios.post(`https://hr-management-backend-frontend.onrender.com//add-company`, values)
                                 .then((res) => {
                                     notification.success({ message: "Added successfully" });
                                     setSubmitting(false);

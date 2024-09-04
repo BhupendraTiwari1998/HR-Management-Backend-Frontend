@@ -14,7 +14,7 @@ const EditStudent = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get(`http://localhost:3003/get-student/${student_edit}`)
+        axios.get(`https://hr-management-backend-frontend.onrender.com//get-student/${student_edit}`)
             .then((res) => {
                 seteditStudent(res.data.data)
             })
@@ -24,7 +24,7 @@ const EditStudent = () => {
     }, [student_edit])
 
     useEffect(() => {
-        axios.get(`http://localhost:3003/get-categories`)
+        axios.get(`https://hr-management-backend-frontend.onrender.com//get-categories`)
             .then((res) => {
                 setStdCategory(res.data.data)
             })
@@ -68,7 +68,7 @@ const EditStudent = () => {
                         }}
                         onSubmit={(values, { setSubmitting }) => {
 
-                            axios.put(`http://localhost:3003/update-student/${student_edit}`, values)
+                            axios.put(`https://hr-management-backend-frontend.onrender.com//update-student/${student_edit}`, values)
                                 .then((res) => {
                                     console.log(res.data)
                                     notification.success({ message: "Updated successfully" })
